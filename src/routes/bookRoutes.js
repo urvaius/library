@@ -1,8 +1,13 @@
 const express = require('express');
+<<<<<<< HEAD
 const sql = require('mssql');
 
 const bookRouter = express.Router();
 const debug = require('debug')('app:bookRoutes');
+=======
+
+const bookRouter = express.Router();
+>>>>>>> parent of 79d624c... sql connected. going to do async part next
 
 function router(nav) {
   const books = [{
@@ -26,6 +31,7 @@ function router(nav) {
   ];
   bookRouter.route('/')
     .get((req, res) => {
+<<<<<<< HEAD
       (async function query() {
         const request = new sql.Request();
         const { recordset } = await request.query('select * from books');
@@ -36,6 +42,16 @@ function router(nav) {
           books: recordset
         });
       }());
+=======
+      res.render(
+        'bookListView',
+        {
+          nav,
+          title: 'Library',
+          books
+        }
+      );
+>>>>>>> parent of 79d624c... sql connected. going to do async part next
     });
   bookRouter.route('/:id')
     .all((req, res, next) => {

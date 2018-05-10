@@ -1,3 +1,7 @@
 $env:DEBUG = "app, node app.js"
 
+<<<<<<< HEAD
 $env:DEBUG = "app,app:*, nodemon app.js"
+=======
+$env:DEBUG = "app, nodemon app.js"
+>>>>>>> parent of 79d624c... sql connected. going to do async part next
